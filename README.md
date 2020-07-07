@@ -5,7 +5,7 @@
 
 `express-prettier` has support of beautifying responses via query parameter by default to make responses more readable for developers/humans. The plugin itself uses [prettier](https://github.com/prettier/prettier) under the hood and is capable of parsing/formatting anything that prettier can.
 
-`express-prettier` registers itself as an exress `middleware` to beautify the response/payload before it gets sent.
+`express-prettier` registers itself as an express `middleware` to beautify the response/payload before it gets sent.
 
 **Note:** `streams` and `buffers` are excluded for beautification by default.
 
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
   res.send(obj)
 })
 
-// initialize the exress server
+// initialize the express server
 app.listen(3000, () => {
   console.log('Express server is running on port: 3000')
 })
