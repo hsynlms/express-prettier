@@ -3,21 +3,21 @@
 
 [![NPM](https://nodei.co/npm/express-prettier.png)](https://nodei.co/npm/express-prettier/)
 
-`express-prettier` has support of beautifying responses via query parameter by default to make responses more readable for developers/humans. The plugin itself uses [prettier](https://github.com/prettier/prettier) under the hood and is capable of parsing/formatting anything that prettier can.
+`express-prettier` has support of beautifying payloads via query parameter to make responses more readable for developers/humans. The plugin itself uses [prettier](https://github.com/prettier/prettier) under the hood and is capable of parsing/formatting anything that prettier can.
 
-`express-prettier` registers itself as an express `middleware` to beautify the response/payload before it gets sent.
+`express-prettier` registers itself as an express `middleware` to beautify the response payload before it gets sent.
 
-**Note:** `streams` and `buffers` are excluded for beautification by default.
+**Note:** `streams` and `buffers` are excluded in beautification process.
 
 ## Options
 
 | Name              | Type               | Default                             | Description                                                                                                          |
 | ---               | ---                | ---                                 | ---                                                                                                                  |
-| alwaysOn         | boolean | false                                | To make all responses beautified automatically in anyway                                                 |
-| fallbackOnError         | boolean            | true                                | If something bad happens while beautifying, fallback/send previous response/payload. If its `false`, error will be thrown                                      |
-| overrideContentLength  | boolean            | true                               | Re-calculate `content-length` header for new beautified response/payload                         |
-| query          | object              | `{ name: 'pretty', value: 'true' }` | Request query parameter that triggers the plugin for the beautified response. It works when `alwaysOn` is disabled |
-| prettierOpts          | object              | `{ tabWidth: 2, parser: 'json-stringify' }` | Prettier plugin options. Please take a look prettier [official documentation](https://prettier.io/docs/en/options.html) for more information |
+| alwaysOn         | boolean | false                                | To make all the payloads beautified in anyway                                                 |
+| fallbackOnError         | boolean            | true                                | If something bad happens, send the original payload. If its `false`, an error will be thrown                                      |
+| overrideContentLength  | boolean            | true                               | Re-calculate `content-length` header for the beautified response                         |
+| query          | object              | `{ name: 'pretty', value: 'true' }` | The query parameter that triggers the plugin to beautify the outgoing payload |
+| prettierOpts          | object              | `{ tabWidth: 2, parser: 'json-stringify' }` | Please take a look prettier [official documentation](https://prettier.io/docs/en/options.html) for more information |
 
 ## Examples
 
@@ -69,7 +69,7 @@ app.listen(3000, () => {
 */
 ```
 
-You are allowed to change query parameter name and value as you desire.
+You are allowed to change the query parameter option.
 
 ```js
 // register express-prettier plugin
@@ -100,7 +100,7 @@ app.use(
 */
 ```
 
-You can enable beautifier for all outgoing responses regardless query parameter when the plugin is registered in Express.
+You can enable beautification for all outgoing payloads regardless the query parameter.
 
 ```js
 // register express-prettier plugin
