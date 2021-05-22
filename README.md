@@ -1,8 +1,8 @@
 # express-prettier
 > A simple and lightweight beautifier plugin for [Express](https://github.com/expressjs/express).
 
-[![Downloads](https://img.shields.io/npm/dm/fastify-guard.svg)](https://npmjs.com/express-prettier)
-[![install size](https://packagephobia.com/badge?p=fastify-guard)](https://packagephobia.com/result?p=express-prettier)
+[![Downloads](https://img.shields.io/npm/dm/express-prettier.svg)](https://npmjs.com/express-prettier)
+[![install size](https://packagephobia.com/badge?p=express-prettier)](https://packagephobia.com/result?p=express-prettier)
 
 `express-prettier` has support of beautifying payloads via query parameter to make responses more readable for developers/humans. The plugin itself uses [prettier](https://github.com/prettier/prettier) under the hood and is capable of parsing/formatting anything that prettier can.
 
