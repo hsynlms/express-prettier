@@ -1,19 +1,14 @@
 'use strict'
 
-// get required node modules
 const app = require('express')()
 const expressPrettier = require('./src/index')
 const chalk = require('chalk')
 
-// defaults
 const defaults = { port: 3000 }
 
-// register the plugin
 app.use(expressPrettier())
 
-// register test route
 app.get('/', (req, res) => {
-  // create an object
   const obj = {
     blackLivesMatter: true,
     favSinger: 'Ahmet Kaya',
@@ -25,14 +20,10 @@ app.get('/', (req, res) => {
     }
   }
 
-  // set return type
   res.setHeader('content-type', 'application/json')
-
-  // return the object
   res.send(obj)
 })
 
-// initialize the express server
 app.listen(defaults.port, () => {
   console.log(
     chalk.bgYellow(
