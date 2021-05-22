@@ -33,9 +33,8 @@ app.get('/', (req, res) => {
     favSinger: 'Ahmet Kaya'
   }
 
-  res
-    .setHeader('content-type', 'application/json')
-    .send(obj)
+  res.setHeader('content-type', 'application/json')
+  res.send(obj)
 })
 
 app.listen(3000, () => {
